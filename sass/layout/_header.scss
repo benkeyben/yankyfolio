@@ -1,0 +1,28 @@
+.header {
+  position: relative;
+  height: 85vh;
+  color: $color-white;
+  background-attachment: fixed;
+  @include bg-img-lin-grad(
+    rgba($color-primary-light, 0.85),
+    rgba($color-primary-dark, 0.85),
+    url(../img/header-small.jpg)
+  );
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.85),
+      rgba($color-primary-dark, 0.85),
+      url(../img/header-large.jpg)
+    );
+  }
+
+  &__text-box {
+    width: 80%;
+    @extend %absCenterExt;
+    text-align: center;
+  }
+}

@@ -1,0 +1,28 @@
+//ABSTRACTS -
+@import 'abstracts/variables';
+@import 'abstracts/extends';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';
+
+//BASE - STYLING HTML AND BODY, RESET
+@import 'base/base';
+@import 'base/animations';
+@import 'base/typography';
+@import 'base/utilities';
+
+//RESUABLE COMPONENTS
+@import 'components/button';
+@import 'components/card';
+@import 'components/client';
+@import 'components/form';
+@import 'components/progress-bar';
+@import 'components/popup';
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/grid';
+@import 'layout/navigation';
+@import 'layout/social-media';
+
+//PAGES -
+@import 'pages/home';

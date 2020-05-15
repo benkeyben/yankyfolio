@@ -1,0 +1,50 @@
+.client {
+  list-style: none;
+  @include clearfix;
+
+  @include respond(phone) {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  &__item {
+    display: inline-block;
+    width: 27%;
+    margin-left: 4.5%;
+    @extend %float-left;
+
+    @include respond(phone) {
+      width: 100%;
+      display: block;
+      margin-bottom: 4rem;
+      margin-left: 0;
+    }
+  }
+
+  &__photo-box {
+    margin-top: 1rem;
+    // margin-left: 3rem;
+  }
+
+  &__photo {
+    height: 5rem;
+    width: 5rem;
+    margin-right: 1.5rem;
+    background-size: cover;
+    background-position: top;
+    @extend %float-left;
+    @extend %border-r-round;
+
+    @include respond(phone) {
+      text-align: center;
+    }
+  }
+
+  &__identity {
+    font-size: 1.7rem;
+    vertical-align: middle;
+    padding-top: 1.4rem;
+    color: $color-grey-light-2;
+    @extend %float-left;
+  }
+}

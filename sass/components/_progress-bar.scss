@@ -1,0 +1,74 @@
+.progress {
+  &__bar {
+    height: 0.6rem;
+    overflow: visible;
+    margin-top: 2rem;
+    background-color: $color-grey-light-3;
+    @extend %border-r-3px;
+  }
+
+  &__reading {
+    position: relative;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    @extend %full-height;
+
+    .strength {
+      position: absolute;
+      top: -3.1rem;
+      right: -1.8rem;
+      font-size: 2rem;
+    }
+
+    &--eighty {
+      background-color: $color-html;
+      width: 80%;
+      @include afterProgReadingMixin($color-html);
+    }
+
+    &--seventy {
+      width: 70%;
+      background-color: $color-css3;
+      @include afterProgReadingMixin($color-css3);
+    }
+
+    &--seventyFive {
+      width: 75%;
+      background-color: $color-sass;
+      @include afterProgReadingMixin($color-sass);
+    }
+
+    &--fifty {
+      width: 50%;
+      background-color: $color-php;
+      @include afterProgReadingMixin($color-php);
+    }
+
+    &--sixty {
+      width: 60%;
+      background-color: $color-nodejs;
+      @include afterProgReadingMixin($color-nodejs);
+    }
+
+    &--sixtyFive {
+      width: 65%;
+      background-color: $color-javascript;
+      @include afterProgReadingMixin($color-javascript);
+    }
+
+    &--fourty {
+      width: 40%;
+      background-color: $color-mysql;
+      @include afterProgReadingMixin($color-mysql);
+    }
+
+    &--thirty {
+      width: 30%;
+      background-color: $color-mongodb;
+      @include afterProgReadingMixin($color-mongodb);
+    }
+  }
+}

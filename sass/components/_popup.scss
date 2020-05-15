@@ -1,0 +1,132 @@
+.popup {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba($color-black, 0.8);
+  @extend %full-width;
+
+  @supports (-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem)) {
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    background-color: rgba($color-black, 0.2);
+  }
+
+  &__content {
+    width: 30%;
+    position: absolute;
+    height: 40rem;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    overflow: hidden;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    transform: translate(-50%, -50%) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) scale(0.25);
+    -moz-transform: translate(-50%, -50%) scale(0.25);
+    -ms-transform: translate(-50%, -50%) scale(0.25);
+    -o-transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.5s 0.2s;
+    -webkit-transition: all 0.5s 0.2s;
+    -moz-transition: all 0.5s 0.2s;
+    -ms-transition: all 0.5s 0.2s;
+    -o-transition: all 0.5s 0.2s;
+    @extend %border-r-3px;
+  }
+
+  &__photo-box {
+    height: 70%;
+    @extend %full-width;
+  }
+  &__img {
+    @extend %full-height;
+    @extend %full-width;
+  }
+
+  &__text {
+    position: absolute;
+    font-size: 1.4rem;
+    margin: 1rem;
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+    @extend %transitionAll-3s;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      font-weight: 700;
+      font-size: 6rem;
+      position: absolute;
+      color: $color-white;
+      top: 6.5rem;
+      right: 40.5rem;
+      text-decoration: none;
+      line-height: 1;
+      z-index: 10000;
+      transition: all 0.5s 0.4s;
+      -webkit-transition: all 0.5s 0.4s;
+      -moz-transition: all 0.5s 0.4s;
+      -ms-transition: all 0.5s 0.4s;
+      -o-transition: all 0.5s 0.4s;
+      opacity: 0;
+      transform: scale(0.25);
+      -webkit-transform: scale(0.25);
+      -moz-transform: scale(0.25);
+      -ms-transform: scale(0.25);
+      -o-transform: scale(0.25);
+      @extend %border-r-round;
+    }
+  }
+
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -moz-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    -o-transform: translate(-50%, -50%) scale(1);
+  }
+  &:target &__close {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+
+  @include respond(tab-port) {
+    &__content {
+      width: 50%;
+    }
+
+    &__close {
+      &:link,
+      &:visited {
+        top: 0.9rem;
+        right: 18rem;
+      }
+    }
+  }
+
+  @include respond(phone) {
+    &__content {
+      width: 70%;
+    }
+
+    &__close {
+      &:link,
+      &:visited {
+        right: 5rem;
+      }
+    }
+  }
+}

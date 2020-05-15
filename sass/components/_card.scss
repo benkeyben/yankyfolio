@@ -1,0 +1,316 @@
+.card {
+  //FUNCTIONALITY
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 37rem;
+
+  &__side {
+    position: absolute;
+    height: 37rem;
+    left: 0;
+    top: 0;
+    width: 90%;
+    margin-left: 5%;
+    transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -ms-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    overflow: hidden;
+    /*Backface visibility hidden basically hide the back of an element*/
+    @extend %bf-visibility-h;
+    @extend %border-r-3px;
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+      }
+
+      &-2 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
+
+      &-3 {
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -ms-transform: rotateY(0);
+    -o-transform: rotateY(0);
+  }
+
+  //FRONT END STYLING
+  &__picture {
+    height: 23rem;
+    background-size: cover;
+    background-position: top;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+
+    &--1 {
+      background-image: url(../img/natureTour-1x.png);
+      background-image: url(../img/natureTour-1x.webp);
+
+      @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+        (min-width: 125em) {
+        background-image: url(../img/natureTour-2x.png);
+        background-image: url(../img/natureTour-2x.webp);
+      }
+    }
+
+    &--2 {
+      background-image: url(../img/omnifood-1x.png);
+      background-image: url(../img/omnifood-1x.webp);
+
+      @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+        (min-width: 125em) {
+        background-image: url(../img/omnifood-2x.png);
+        background-image: url(../img/omnifood-2x.webp);
+      }
+    }
+
+    &--3 {
+      background-image: url(../img/budget-calca-1x.png);
+      background-image: url(../img/budget-calca-1x.webp);
+
+      @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+        (min-width: 125em) {
+        background-image: url(../img/budget-calca-1x.png);
+        background-image: url(../img/budget-calca-1x.webp);
+      }
+    }
+  }
+
+  &__heading {
+    position: absolute;
+    margin-top: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: $color-white;
+    top: 3rem;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+
+    // /*box-decoration-break treats two lines as if they were block element*/
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    padding: 1rem;
+
+    ul {
+      list-style: none;
+
+      li {
+        font-size: $default-font-size;
+        text-transform: uppercase;
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 1.2rem;
+    margin: 0 2rem;
+  }
+
+  //BACK SIDE STYLING
+  &__cta {
+    color: $color-white;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    @extend %absCenterExt;
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    line-height: 1.2;
+  }
+
+  @include respond(tab-port) {
+    width: 55%;
+    margin: 0 auto;
+    height: auto;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    background-color: $color-white;
+
+    &__side {
+      position: relative;
+      box-shadow: none;
+      height: auto;
+      margin-left: 0;
+      width: 100%;
+
+      &--back {
+        clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%);
+
+        transform: rotateY(0);
+        -webkit-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+        -ms-transform: rotateY(0);
+        -o-transform: rotateY(0);
+      }
+    }
+
+    &__heading {
+      font-size: 3.2rem;
+    }
+
+    &__details {
+      padding-bottom: 0;
+      ul {
+        padding-left: 4rem;
+        padding-right: 0;
+
+        li {
+          font-size: 1.8rem;
+          width: 85%;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &__icon {
+      margin: 0 4rem;
+      font-size: 1.5rem;
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+      -webkit-transform: rotateY(0);
+      -moz-transform: rotateY(0);
+      -ms-transform: rotateY(0);
+      -o-transform: rotateY(0);
+    }
+
+    //FRONT END STYLING
+
+    &__cta {
+      position: relative;
+      color: $color-white;
+      width: 100%;
+      margin: 0 auto;
+      padding: 6rem 2rem 2rem 2rem;
+      text-align: center;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      -webkit-transform: translate(0);
+      -moz-transform: translate(0);
+      -ms-transform: translate(0);
+      -o-transform: translate(0);
+    }
+
+    &__paragraph {
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      line-height: 1.2;
+    }
+  }
+
+  @include respond(phone) {
+    width: 75%;
+    margin: 0 auto;
+
+    &__picture {
+      height: 21rem;
+    }
+
+    &__heading {
+      font-size: 2.8rem;
+    }
+
+    &__details {
+      padding-bottom: 1rem;
+
+      ul {
+        padding-left: 0;
+        padding-right: 0;
+
+        li {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+    }
+    &__icon {
+      margin: 0 3rem;
+      margin-right: 2.5rem;
+    }
+
+    &__cta {
+      padding: 4rem 1rem 2rem 1rem;
+    }
+  }
+}

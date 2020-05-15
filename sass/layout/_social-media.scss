@@ -1,0 +1,60 @@
+.social-media {
+  &__nav {
+    position: relative;
+    text-align: center;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__items {
+    margin-right: 2rem;
+    display: inline-block;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      font-size: 3.5rem;
+      text-decoration: none;
+      border: none;
+
+      .ion-social-facebook {
+        color: $color-facebook;
+      }
+
+      .ion-social-twitter {
+        color: $color-twitter;
+      }
+
+      .ion-social-instagram {
+        color: $color-instagram;
+      }
+      .ion-social-github {
+        color: $color-github;
+      }
+
+      .ion-social-linkedIn {
+        color: $color-linkedin;
+      }
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+      border: none;
+      @extend %transitionAll-3s;
+    }
+  }
+}
+.ion-social-facebook,
+.ion-social-github,
+.ion-social-twitter,
+.ion-social-instagram {
+  transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
+}

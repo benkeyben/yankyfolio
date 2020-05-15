@@ -1,0 +1,218 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 7rem 0 3rem 0;
+  scroll-margin-top: 2rem;
+
+  @include respond(phone) {
+    padding: 7rem 0 3rem 0;
+  }
+
+  .about {
+    width: 35%;
+    margin: 0 auto;
+
+    &__photo-box {
+      height: 15rem;
+      width: 15rem;
+      margin: 0 auto;
+    }
+
+    &__photo {
+      position: relative;
+      background-image: url(../img/profile__photo.jpg);
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      @extend %full-width;
+      @extend %full-height;
+      @extend %transitionAll-3s;
+      @extend %border-r-round;
+      @extend %bf-visibility-h;
+      @include roundOutline(-2rem, $color-primary);
+
+      &:hover {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        @include roundOutline(-2rem, $color-primary);
+      }
+    }
+
+    &__caption {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+.section-skills {
+  padding: 7rem 0 3rem 0;
+  scroll-margin-top: 2rem;
+  @include bg-img-lin-grad(
+    rgba($color-primary-light, 0.85),
+    rgba($color-primary-dark, 0.85),
+    url(../img/header-small.jpg)
+  );
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.85),
+      rgba($color-primary-dark, 0.85),
+      url(../img/header-large.jpg)
+    );
+  }
+
+  @include respond(phone) {
+    padding: 7rem 0 3rem 0;
+  }
+
+  .skills {
+    background-color: $color-white;
+    padding: 2.5rem;
+    transition: transform 0.2s;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -ms-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    width: 90%;
+    margin: 0 auto;
+    @extend %border-r-3px;
+
+    &__card {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    &__photo {
+      @extend %full-width;
+    }
+
+    &__caption {
+      font-size: 2rem;
+      text-transform: uppercase;
+      overflow: visible;
+    }
+
+    &:hover {
+      transform: translateY(-1.5rem) scale(1.03);
+      -webkit-transform: translateY(-1.5rem) scale(1.03);
+      -moz-transform: translateY(-1.5rem) scale(1.03);
+      -ms-transform: translateY(-1.5rem) scale(1.03);
+      -o-transform: translateY(-1.5rem) scale(1.03);
+    }
+  }
+}
+
+.section-projects {
+  padding: 7rem 0;
+  scroll-margin-top: 2rem;
+  background-color: $color-grey-light-1;
+
+  @include respond(phone) {
+    padding: 7rem 0;
+  }
+
+  .code {
+    padding: 2.5rem;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    color: $color-grey-dark-2;
+    background-color: $color-grey-light-1;
+    box-shadow: 0 1.5rem 2rem rgba($color-black, 0.1);
+    @extend %border-r-3px;
+
+    @include respond(tab-port) {
+      width: 55%;
+      font-size: 2rem;
+    }
+
+    @include respond(phone) {
+      width: 80%;
+    }
+
+    &__quote {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    figcaption {
+      text-align: right;
+      padding-right: 6rem;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.section-client {
+  padding: 8rem 0;
+  background-attachment: fixed;
+  @include bg-img-lin-grad(
+    rgba($color-primary-light, 0.85),
+    rgba($color-primary-dark, 0.85),
+    url(../img/header-small.jpg)
+  );
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
+    // @include bg-img-lin-grad(rgba($color-primary-light, .85), $color-primary-dark, url(../img/header-large.jpg));
+
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.85),
+      rgba($color-primary-dark, 0.85),
+      url(../img/header-large.jpg)
+    );
+  }
+
+  @include respond(phone) {
+    padding: 8rem 0 5rem 0;
+  }
+}
+
+.section-contact {
+  padding: 10rem 0;
+  scroll-margin-top: 2rem;
+  background-color: $color-grey-light-1;
+}
+
+.contact {
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0 1.5rem 4rem rgba($color-primary-light, 0.3);
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+  @extend %bf-visibility-h;
+  @extend %border-r-3px;
+
+  &__form {
+    padding: 6rem;
+    padding-top: 3rem;
+    @extend %full-width;
+  }
+
+  @include respond(tab-port) {
+    width: 65%;
+
+    &__form {
+      padding: 4rem;
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  @include respond(phone) {
+    width: 80%;
+
+    &__form {
+      padding: 2rem;
+      width: 100%;
+    }
+  }
+}

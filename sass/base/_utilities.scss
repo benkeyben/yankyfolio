@@ -1,0 +1,95 @@
+.u-center-text {
+  text-align: center !important;
+}
+
+//PADDING
+.u-pb-xxs {
+  padding-bottom: 0.5rem !important;
+}
+.u-pb-xs {
+  padding-bottom: 1rem !important;
+}
+
+/*MARGIN*/
+.u-mt-lg {
+  margin-top: 3.5rem !important;
+}
+.u-mt-md {
+  margin-top: 3rem !important;
+}
+.u-mt-sm {
+  margin-top: 2.5rem !important;
+}
+.u-mt-xs {
+  margin-top: 1rem !important;
+}
+
+.u-mb-xs {
+  margin-bottom: 1rem !important;
+}
+.u-mb-sm {
+  margin-bottom: 2.5rem !important;
+}
+.u-mb-md {
+  margin-bottom: 4rem !important;
+}
+.u-mb-lg {
+  margin-bottom: 6rem !important;
+}
+
+.u-fs-md {
+  font-size: 2rem;
+}
+
+//WIDTHS
+.u-width-md {
+  width: 60%;
+  margin: 0 auto;
+
+  @include respond(phone) {
+    width: 70%;
+  }
+}
+
+.u-width-sm {
+  width: 55%;
+  margin: 0 auto;
+
+  @include respond(phone) {
+    width: 70%;
+  }
+}
+
+.u-width-lg {
+  width: 80%;
+  margin: 0 auto;
+}
+
+//COLORS
+.u-color-white {
+  color: $color-white !important;
+}
+.u-color-sass {
+  color: #f26394;
+}
+.u-color-html {
+  color: #e44d26;
+}
+.u-color-css3 {
+  color: #2062af;
+}
+.u-color-javaScript {
+  color: #d6a832;
+}
+.u-color-nodejs {
+  color: #4caf50;
+}
+.u-color-php {
+  color: #8f9ed1;
+}
+.u-color-mysql {
+  color: #de8e3a;
+}
+.u-color-mongodb {
+  color: #4caf50;
+}

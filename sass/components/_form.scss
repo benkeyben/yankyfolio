@@ -1,0 +1,110 @@
+.form {
+  &__group {
+    width: 80%;
+    margin: 0 auto;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__input {
+    font-size: 2rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border: none;
+    background-color: $color-white;
+    border-bottom: 3px solid transparent;
+    @extend %display-b;
+    @extend %transitionAll-3s;
+    @extend %full-width;
+    @extend %border-r-3px;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-tertiary-dark;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-primary;
+    }
+
+    &::-moz-placeholder {
+      color: $color-primary;
+      opacity: 1;
+    }
+
+    &:-webkit-autofill {
+      -webkit-animation-delay: 1s;
+      -webkit-animation-name: autofill;
+      -webkit-animation-fill-mode: both;
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    padding: 2rem 0 0 2rem;
+    border: none;
+    color: $color-grey-dark;
+    font-size: 2rem;
+    font-family: inherit;
+    @extend %display-b;
+    @extend %border-r-3px;
+
+    &:focus {
+      outline: none;
+      color: $color-grey-dark;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-primary;
+    }
+
+    &::-moz-placeholder {
+      color: $color-primary;
+      opacity: 1;
+    }
+  }
+
+  &__label {
+    margin-top: 0.7rem;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $color-white;
+    @extend %display-b;
+    @extend %transitionAll-3s;
+
+    &--message {
+      font-size: 2rem;
+      margin: 0 0 1rem 0;
+      color: $color-white;
+    }
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+    -webkit-transform: translateY(-4rem);
+    -moz-transform: translateY(-4rem);
+    -ms-transform: translateY(-4rem);
+    -o-transform: translateY(-4rem);
+  }
+
+  @include respond(tab-port) {
+    &__group {
+      width: 85%;
+      margin: 0 auto;
+    }
+
+    &__textarea {
+      font-size: 2.1rem;
+    }
+  }
+}

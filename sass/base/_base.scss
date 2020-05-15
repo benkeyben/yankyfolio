@@ -1,0 +1,66 @@
+//RESET
+//STYLES FOR BODY AND HTML ELEMENTS
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* This defines what 1rem is: 10/16 * 100 = 62.5% 
+By using rem we make our entire page dependent on the font sze of the root;
+*/
+html {
+  font-size: 62.5%; //1rem = 10px; 10px/16px = 62.5%
+  scroll-behavior: smooth;
+
+  @include respond(tab-land) {
+    //width < 1200
+    font-size: 56.25%; //1 rem = 9px, 9/16 * 100 = 56.25%
+  }
+
+  @include respond(tab-port) {
+    //width < 900
+    font-size: 50%; // 1 rem = 8px, 8/16 * 100 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px 12/16 * 100 = 75%
+  }
+  // @include respond(phone) {
+  //   font-size: 30%; //1rem = 4.8px, 4.8/16 * 100 =
+  // }
+}
+
+::selection {
+  background-color: $color-primary-light;
+  color: $color-white;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 2.5rem;
+  padding-bottom: 0;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+
+  @include respond(phone) {
+    padding: 0;
+  }
+}
+
+// .row {
+//   max-width: 114rem;
+//   margin: 0 auto;
+//   @include clearfix;
+// }

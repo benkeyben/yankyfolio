@@ -1,0 +1,100 @@
+body {
+  color: $color-grey-dark;
+  font-weight: 400;
+  font-family: 'Lato' sans-serif;
+  line-height: 1.7;
+}
+
+.heading-primary {
+  color: $color-white;
+  @extend %bf-visibility-h;
+  @extend %transitionAll-3s;
+
+  &--main {
+    text-transform: initial;
+    animation: moveInLeft 1s ease-out;
+    -webkit-animation: moveInLeft 1s ease-out;
+    animation-fill-mode: backwards;
+    @extend %heading-p-styles;
+  }
+
+  &--sub {
+    text-transform: uppercase;
+    animation: moveInRight 1s ease-out;
+    -webkit-animation: moveInRight 1s ease-out;
+    animation-fill-mode: backwards;
+    @extend %heading-p-styles;
+  }
+
+  @include respond(tab-port) {
+    letter-spacing: 0.8rem;
+    font-size: 3.3rem;
+  }
+
+  @include respond(phone) {
+    letter-spacing: 0.5rem;
+    font-size: 2.8rem;
+  }
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  font-weight: 550;
+  letter-spacing: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 300;
+
+  @extend %bg-clip-text-color;
+
+  @include respond(tab-port) {
+    letter-spacing: 0.8rem;
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    letter-spacing: 0.5rem;
+    // font-size: 2.rem;
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  @include respond(tab-port) {
+    letter-spacing: 0.8rem;
+    font-size: 1.6rem;
+  }
+
+  @include respond(phone) {
+    letter-spacing: 0.3rem;
+    // font-size: 1.4rem;
+  }
+}
+
+.paragraph {
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: 2.2rem;
+  font-weight: 400;
+
+  @include respond(tab-port) {
+    font-size: 2.2rem;
+  }
+
+  @include respond(phone) {
+    font-size: 1.9rem;
+  }
+}
+
+.blockquote {
+  text-align: center;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  color: $color-white;
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+}

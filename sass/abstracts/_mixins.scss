@@ -1,0 +1,133 @@
+//BACKGROUNDS IMAGES STYLES
+@mixin bg-img-lin-grad($color_1, $color_2, $img) {
+  background-image: linear-gradient(to right bottom, $color_1, $color_2), $img;
+  background-image: -webkit-linear-gradient(to right bottom, $color_1, $color_2), $img;
+  background-image: -o-linear-gradient(to right bottom, $color_1, $color_2), $img;
+  background-image: -moz-linear-gradient(to right bottom, $color_1, $color_2), $img;
+  background-size: cover;
+  background-position: top;
+}
+
+@mixin color-bg-clip-text($direction, $color_1, $color_2, $color_3) {
+  background: $color_3;
+  background: linear-gradient($direction, $color_1, $color_2, $color_3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/*Absolute Center of div in Mix*/
+@mixin absCenterMix($value) {
+  position: absolute;
+  top: $value;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+@mixin boxShadow($x, $y, $blur, $color) {
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin afterProgReadingMixin($color) {
+  &::after {
+    @extend %afterProgReadingExt;
+    background-color: $color;
+  }
+}
+
+@mixin roundOutline($value, $color) {
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: $value;
+    bottom: $value;
+    left: $value;
+    right: $value;
+    border: 0.5rem double $color;
+    @extend %border-r-round;
+  }
+}
+
+// @include boxShadow($x, $y, $blur, $color);
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// @mixin clearfix($selector) {
+//   #{$selector}::after {
+//     content: '';
+//     display: table;
+//     clear: both;
+//   }
+// }
+
+// ANIMATION, TRANSFORM , TRANSITION
+@mixin transformOpacity($opacity, $transForm) {
+  opacity: $opacity;
+  transform: $transForm;
+  -webkit-transform: $transForm;
+  -moz-transform: $transForm;
+  -ms-transform: $transForm;
+  -o-transform: $transForm;
+}
+
+@mixin transition($property, $duration) {
+  -webkit-transition: $property $duration;
+  -moz-transition: $property $duration;
+  -o-transition: $property $duration;
+  transition: $property $duration;
+}
+
+//MEDIA QUERY MANAGER
+/*
+0         -     600px   Phone
+600px     -     900px   Tablet portrait
+900px     -     1200px  Tablet landscape
+12000     -     1800px  is where out normal styles apply
+1800px +  -     Big desktop
+
+$breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px => 
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } //600px => 600/16 = 37.5em
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+}

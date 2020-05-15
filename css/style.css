@@ -1,4 +1,4 @@
-.card__cta, .header__text-box, .social-media__nav {
+.card__cta, .header__text-box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -130,8 +130,12 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 2.5rem; }
+  padding: 2.5rem;
+  padding-bottom: 0; }
   @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+  @media (max-width: 37.5em) {
     body {
       padding: 0; } }
 
@@ -473,7 +477,7 @@ body {
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  bottom: 2rem;
+  bottom: 4rem;
   right: 2rem;
   z-index: 99;
   outline: none;
@@ -732,7 +736,7 @@ body {
     margin-bottom: 1rem; }
 
 .form__input {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: inherit;
   color: inherit;
   padding: 1.5rem 2rem;
@@ -778,7 +782,7 @@ body {
   font-weight: 700;
   color: #fff; }
   .form__label--message {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0 0 1rem 0;
     color: #fff; }
 
@@ -791,11 +795,18 @@ body {
   -ms-transform: translateY(-4rem);
   -o-transform: translateY(-4rem); }
 
+@media (max-width: 56.25em) {
+  .form__group {
+    width: 85%;
+    margin: 0 auto; }
+  .form__textarea {
+    font-size: 2.1rem; } }
+
 .progress__bar {
   height: 0.6rem;
   overflow: visible;
   margin-top: 2rem;
-  background-color: #eee; }
+  background-color: #e6e6e6e8; }
 
 .progress__reading {
   position: relative;
@@ -936,9 +947,9 @@ body {
       right: 18rem; } }
   @media (max-width: 37.5em) {
     .popup__content {
-      width: 50%; }
+      width: 70%; }
     .popup__close:link, .popup__close:visited {
-      right: 10rem; } }
+      right: 5rem; } }
 
 .header {
   position: relative;
@@ -955,21 +966,21 @@ body {
     .header {
       background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(69, 52, 231, 0.85), url(../img/header-large.jpg)); } }
   .header__text-box {
-    width: 75%;
+    width: 80%;
     text-align: center; }
 
 .footer {
   position: relative;
-  padding-top: 8rem;
-  padding-bottom: 0;
-  height: 15vh;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
   font-size: 2rem;
   box-sizing: content-box;
   background-image: linear-gradient(to right bottom, #2998ff, #4534e7); }
   .footer__copyright {
     color: #eee;
     font-size: 90%;
-    text-align: center; }
+    text-align: center;
+    padding: 1rem 0; }
   @media (max-width: 56.25em) {
     .footer {
       font-size: 2.2rem; } }
@@ -1010,7 +1021,7 @@ body {
 
 .navigation {
   position: relative;
-  padding: 2rem 0 0.8rem 0; }
+  padding: 2.3rem 0 0.8rem 0; }
   .navigation::after {
     content: '';
     display: table;
@@ -1047,6 +1058,9 @@ body {
     position: absolute; }
   .navigation__link:hover, .navigation__link:active {
     border-bottom: 0.2rem solid #fff; }
+  @media (max-width: 56.25em) {
+    .navigation__link:link, .navigation__link:visited {
+      font-size: 2.2rem; } }
   @media (max-width: 37.5em) {
     .navigation {
       z-index: 2;
@@ -1165,14 +1179,13 @@ body {
   box-shadow: 0 0.2rem 0.2rem rgba(41, 152, 255, 0.3); }
   .sticky__link:link, .sticky__link:visited {
     padding-bottom: 1.9rem; }
+  @media (max-width: 56.25em) {
+    .sticky {
+      padding: 1rem 0 0.87rem 0; } }
 
 .social-media__nav {
   position: relative;
   text-align: center; }
-  @media (max-width: 37.5em) {
-    .social-media__nav {
-      width: 90%;
-      margin: 0 auto; } }
 
 .social-media__list {
   list-style: none; }
@@ -1226,7 +1239,7 @@ body {
       margin: 0 auto; }
     .section-about .about__photo {
       position: relative;
-      background-image: url(../img/profile_photo.jpg);
+      background-image: url(../img/profile__photo.jpg);
       background-size: cover;
       background-position: top;
       background-repeat: no-repeat; }
@@ -1359,9 +1372,14 @@ body {
     padding-top: 3rem; }
   @media (max-width: 56.25em) {
     .contact {
-      width: 65%; } }
+      width: 65%; }
+      .contact__form {
+        padding: 4rem;
+        width: 90%;
+        margin: 0 auto; } }
   @media (max-width: 37.5em) {
     .contact {
       width: 80%; }
       .contact__form {
-        padding: 3.5rem; } }
+        padding: 2rem;
+        width: 100%; } }

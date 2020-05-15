@@ -1,0 +1,57 @@
+@keyframes moveInBottom {
+  0% {
+    @include transformOpacity(0, translateY(3rem));
+  }
+
+  100% {
+    @include transformOpacity(1, translate(0));
+  }
+}
+@keyframes moveInTop {
+  0% {
+    @include transformOpacity(0, translateY(-10rem));
+  }
+
+  80% {
+    @include transformOpacity($opacity: null, $transForm: translateY(1rem));
+  }
+
+  100% {
+    @include transformOpacity(1, translate(0));
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    @include transformOpacity(0, translateX(-10rem));
+  }
+
+  80% {
+    @include transformOpacity($opacity: null, $transForm: translateX(1rem));
+  }
+
+  100% {
+    @include transformOpacity(1, translate(0));
+  }
+}
+@keyframes moveInRight {
+  0% {
+    @include transformOpacity(0, translateX(10rem));
+  }
+
+  80% {
+    @include transformOpacity($opacity: null, $transForm: translateX(-1rem));
+  }
+
+  100% {
+    @include transformOpacity(1, translate(0));
+  }
+}
+
+@-webkit-keyframes autofill {
+  0%,
+  100% {
+    color: $color-grey-dark;
+    background-color: $color-white;
+  }
+}
