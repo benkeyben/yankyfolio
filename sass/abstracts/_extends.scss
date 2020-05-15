@@ -25,7 +25,6 @@
   color: transparent;
 }
 
-// (to right, $bg-clip-text-color-1, $bg-clip-text-color-2, $bg-clip-text-color-3);
 %clip-path {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);

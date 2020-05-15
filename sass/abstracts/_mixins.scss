@@ -55,8 +55,6 @@
   }
 }
 
-// @include boxShadow($x, $y, $blur, $color);
-
 @mixin clearfix {
   &::after {
     content: '';

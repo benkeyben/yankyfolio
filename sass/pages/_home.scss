@@ -19,7 +19,7 @@
 
     &__photo {
       position: relative;
-      background-image: url(../img/profile__photo.jpg);
+      background-image: url(../img/profile__photo-1x.jpg);
       background-size: cover;
       background-position: top;
       background-repeat: no-repeat;
@@ -29,6 +29,15 @@
       @extend %border-r-round;
       @extend %bf-visibility-h;
       @include roundOutline(-2rem, $color-primary);
+
+      @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+        (min-width: 125em) {
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-image: url(../img/profile__photo-2x.jpg);
+      }
 
       &:hover {
         transform: scale(1.05);
@@ -162,8 +171,6 @@
   @media (min-resolution: 192dpi) and (min-width: 37.5em),
     (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
     (min-width: 125em) {
-    // @include bg-img-lin-grad(rgba($color-primary-light, .85), $color-primary-dark, url(../img/header-large.jpg));
-
     background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.85),
