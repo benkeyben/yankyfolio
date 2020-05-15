@@ -12,16 +12,16 @@ body {
 
   &--main {
     text-transform: initial;
-    animation: moveInLeft 1s ease-out;
-    -webkit-animation: moveInLeft 1s ease-out;
+    animation: moveInLeft 2s ease-out;
+    -webkit-animation: moveInLeft 2s ease-out;
     animation-fill-mode: backwards;
     @extend %heading-p-styles;
   }
 
   &--sub {
     text-transform: uppercase;
-    animation: moveInRight 1s ease-out;
-    -webkit-animation: moveInRight 1s ease-out;
+    animation: moveInRight 2s ease-out;
+    -webkit-animation: moveInRight 2s ease-out;
     animation-fill-mode: backwards;
     @extend %heading-p-styles;
   }
@@ -53,7 +53,6 @@ body {
 
   @include respond(phone) {
     letter-spacing: 0.5rem;
-    // font-size: 2.rem;
   }
 }
 
@@ -69,7 +68,6 @@ body {
 
   @include respond(phone) {
     letter-spacing: 0.3rem;
-    // font-size: 1.4rem;
   }
 }
 

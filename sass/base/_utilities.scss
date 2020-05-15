@@ -70,26 +70,137 @@
   color: $color-white !important;
 }
 .u-color-sass {
-  color: #f26394;
+  color: #f26394 !important;
+  border-bottom: 1px solid #f26394 !important;
 }
+
+.u-color-sass-hover {
+  &:hover {
+    color: $color-white !important;
+    background-color: #f26394 !important;
+  }
+
+  @include respond(tab-port) {
+    color: $color-white !important;
+    background-color: #f26394 !important;
+  }
+}
+
 .u-color-html {
-  color: #e44d26;
+  color: #e44d26 !important;
+  border-bottom: 1px solid #e44d26 !important;
 }
+
+.u-color-html-hover {
+  &:hover {
+    color: $color-white !important;
+    background-color: #e44d26 !important;
+  }
+
+  @include respond(tab-port) {
+    color: $color-white !important;
+    background-color: #e44d26 !important;
+  }
+}
+
 .u-color-css3 {
-  color: #2062af;
+  color: #2062af !important;
+  border-bottom: 1px solid #2062af !important;
 }
+
+.u-color-css3-hover {
+  &:hover {
+    color: $color-white !important;
+    background-color: #2062af !important;
+  }
+
+  @include respond(tab-port) {
+    color: $color-white !important;
+    background-color: #2062af !important;
+  }
+}
+
 .u-color-javaScript {
-  color: #d6a832;
+  color: #d6a832 !important;
+  border-bottom: 1px solid #d6a832 !important;
 }
+
+.u-color-javaScript-hover {
+  &:hover {
+    color: $color-white !important;
+    background-color: #d6a832 !important;
+  }
+
+  @include respond(tab-port) {
+    color: $color-white !important;
+    background-color: #d6a832 !important;
+  }
+}
+
 .u-color-nodejs {
-  color: #4caf50;
+  color: #4caf50 !important;
+  border-bottom: 1px solid #4caf50 !important;
 }
+
+.u-color-nodejs-hover {
+  &:hover {
+    color: $color-white !important;
+    background-color: #4caf50 !important;
+  }
+
+  @include respond(tab-port) {
+    color: $color-white !important;
+    background-color: #4caf50 !important;
+  }
+}
+
 .u-color-php {
-  color: #8f9ed1;
+  color: #8f9ed1 !important;
+  border-bottom: 1px solid #8f9ed1 !important;
 }
+
+.u-color-php-hover {
+  &:hover {
+    color: $color-white !important;
+    background-color: #8f9ed1 !important;
+  }
+
+  @include respond(tab-port) {
+    color: $color-white !important;
+    background-color: #8f9ed1 !important;
+  }
+}
+
 .u-color-mysql {
-  color: #de8e3a;
+  color: #de8e3a !important;
+  border-bottom: 1px solid #de8e3a !important;
 }
+
+.u-color-mysql-hover {
+  &:hover {
+    color: $color-white !important;
+    background-color: #de8e3a !important;
+  }
+
+  @include respond(tab-port) {
+    color: $color-white !important;
+    background-color: #de8e3a !important;
+  }
+}
+
 .u-color-mongodb {
-  color: #4caf50;
+  color: #4caf50 !important;
+  border-bottom: 1px solid #4caf50 !important;
+}
+
+.u-color-mongodb-hover {
+  &:hover {
+    color: $color-white !important;
+    background-color: #4caf50 !important;
+  }
+
+  @include respond(tab-port) {
+    color: $color-white !important;
+    background-color: #4caf50 !important;
+  }
 }
