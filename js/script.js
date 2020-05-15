@@ -2,12 +2,13 @@
 // polyfill();
 
 /*Open all External links in a New Tab*/
-(function () {
+function externalLinks () {
   for (let anchorList = document.getElementsByTagName('a'), a = 0; a < anchorList.length; a++) {
     let anchorItem = anchorList[a];
     anchorItem.getAttribute('href') && anchorItem.hostname !== location.hostname && (anchorItem.target = '_blank');
   }
-})();
+}
+externalLinks();
 
 /*Scrollinng functions of the Sticky navbar */
 //Get the button
